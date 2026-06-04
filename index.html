@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Abdureman Mudi— Builder. Disruptor. Visionary.</title>
+<title>Abdi — Builder. Disruptor. Visionary.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -387,6 +387,59 @@
   }
   .project-card.red .project-tag { color: var(--accent2); border-color: rgba(255,51,102,0.2); }
   .project-card.purple .project-tag { color: var(--accent3); border-color: rgba(99,102,241,0.3); }
+  .project-card.amber .project-tag { color: #f59e0b; border-color: rgba(245,158,11,0.25); }
+  .project-card.amber::after { background: linear-gradient(135deg, rgba(245,158,11,0.04) 0%, transparent 60%); }
+
+  /* ZEMENBYTE FEATURE CARD */
+  .project-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    background: var(--surface);
+    border-left: 2px solid #f59e0b;
+  }
+  .project-card.featured .project-number { font-size: 5rem; }
+  .featured-right { display: flex; flex-direction: column; gap: 1.5rem; }
+  .feature-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: #f59e0b;
+    border: 1px solid rgba(245,158,11,0.25);
+    padding: 0.3rem 0.75rem;
+    width: fit-content;
+  }
+  .feature-pill::before { content: '●'; font-size: 0.4rem; animation: blink 2s infinite; }
+  .features-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .feat-icon {
+    color: #f59e0b;
+    font-size: 0.7rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+  }
+  .lang-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .lang-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(245,158,11,0.3);
+    color: #f59e0b;
+  }
+  @media (max-width: 768px) {
+    .project-card.featured { grid-template-columns: 1fr; }
+  }
 
   .project-title {
     font-family: 'Syne', sans-serif;
@@ -580,7 +633,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Abdureman Mudi</div>
+  <div class="nav-logo">Abdi</div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -597,7 +650,7 @@
   <div style="position: relative; z-index: 1;">
     <div class="hero-label">Based in Addis Ababa, Ethiopia &nbsp;·&nbsp; Builder &nbsp;·&nbsp; Disruptor</div>
     <h1 class="hero-name">
-      <span class="line1">Abdureman Mudi</span>
+      <span class="line1">Abdi</span>
       <span class="line2">Reshapes</span>
     </h1>
     <p class="hero-tagline">
@@ -687,7 +740,7 @@
     <div class="project-card red reveal">
       <div class="project-number">02</div>
       <div class="project-tag red">GovTech · SaaS</div>
-      <h3 class="project-title">Passport Appointment Service</h3>
+      <h3 class="project-title">Passport Appointment Booking Service</h3>
       <p class="project-desc">A streamlined online service helping Ethiopians navigate and book immigration appointments — filling the massive UX gap in government immigration portals with a clean, accessible interface.</p>
       <div class="project-stack">
         <span class="stack-item">Web App</span>
@@ -708,6 +761,57 @@
         <span class="stack-item">Docker</span>
         <span class="stack-item">Multi-source Scraping</span>
         <span class="stack-item">REST API</span>
+      </div>
+    </div>
+
+    <!-- ZEMENBYTE FEATURED CARD -->
+    <div class="project-card featured amber reveal">
+      <div class="project-number">05</div>
+      <div>
+        <div class="project-tag" style="color:#f59e0b; border-color:rgba(245,158,11,0.25);">AI · Community · Telegram</div>
+        <h3 class="project-title" style="margin-top:1rem;">ZemenByte Bot</h3>
+        <p class="project-desc">An AI-powered Telegram content automation engine built for Ethiopian communities. ZemenByte removes the manual burden of community management — automatically generating, scheduling, and publishing posts in local languages, while keeping every subscriber engaged and incentivized through a built-in referral system.</p>
+        <div class="project-stack" style="margin-top:1.5rem;">
+          <span class="stack-item">Python</span>
+          <span class="stack-item">Telegram Bot API</span>
+          <span class="stack-item">AI Content Engine</span>
+          <span class="stack-item">NLP / Local Languages</span>
+          <span class="stack-item">Referral System</span>
+          <span class="stack-item">Scheduler</span>
+        </div>
+      </div>
+      <div class="featured-right">
+        <div class="feature-pill">Live Product</div>
+        <div class="features-list">
+          <div class="feat-item">
+            <span class="feat-icon">&#9889;</span>
+            <span><strong style="color:var(--text)">AI Post Automation</strong> — Generates and publishes content autonomously using an AI engine, eliminating manual posting and maintaining consistent channel activity 24/7.</span>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#127757;</span>
+            <span><strong style="color:var(--text)">Local Language Support</strong> — Native-first content in Amharic and Afaan Oromoo, designed to reach Ethiopian audiences in the languages they actually use.</span>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128279;</span>
+            <span><strong style="color:var(--text)">Referral Link Engine</strong> — Every subscriber gets a unique referral link automatically, turning passive followers into active growth ambassadors.</span>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128276;</span>
+            <span><strong style="color:var(--text)">Smart Notifications</strong> — Subscribers are instantly notified upon each new post publication, driving re-engagement and maximizing content reach.</span>
+          </div>
+          <div class="feat-item">
+            <span class="feat-icon">&#128202;</span>
+            <span><strong style="color:var(--text)">Community Growth Loop</strong> — The referral + notify feedback loop creates a self-sustaining growth engine built for viral community expansion.</span>
+          </div>
+        </div>
+        <div>
+          <div class="form-label" style="margin-bottom:0.75rem;">Language Support</div>
+          <div class="lang-badges">
+            <span class="lang-badge">&#4768;&#4635;&#4653;&#4763; Amharic</span>
+            <span class="lang-badge">Afaan Oromoo</span>
+            <span class="lang-badge">English</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -759,9 +863,9 @@
         <div class="timeline-dot"></div>
       </div>
       <div>
-        <div class="timeline-role">Physics Bsc Graduate & Research Enthusiast</div>
+        <div class="timeline-role">Physics Student & Research Enthusiast</div>
         <div class="timeline-company">University — Ethiopia</div>
-        <div class="timeline-desc">Completed university-level physics studies. Developed a rigorous analytical mindset that now underpins technical product decision-making and systems thinking.</div>
+        <div class="timeline-desc">Completed university-level physics studies including a comprehensive exit examination. Developed a rigorous analytical mindset that now underpins technical product decision-making and systems thinking.</div>
       </div>
     </div>
   </div>
@@ -781,8 +885,8 @@
           <span>Telegram Bot</span>
           <span class="contact-link-arrow">→</span>
         </a>
-        <a href="mailto:abdumd30@hotmail.com" class="contact-link">
-          <span>Email</span>
+        <a href="mailto:abduremankoo@gmail.com" class="contact-link">
+          <span>abduremankoo@gmail.com</span>
           <span class="contact-link-arrow">→</span>
         </a>
         <a href="#" class="contact-link">
@@ -799,22 +903,23 @@
       <div class="form-row">
         <div class="form-field">
           <label class="form-label">Name</label>
-          <input class="form-input" type="text" placeholder="Your name" />
+          <input class="form-input" id="cf-name" type="text" placeholder="Your name" />
         </div>
         <div class="form-field">
           <label class="form-label">Email</label>
-          <input class="form-input" type="email" placeholder="abdumd30@hotmail.com" />
+          <input class="form-input" id="cf-email" type="email" placeholder="your@email.com" />
         </div>
       </div>
       <div class="form-field">
         <label class="form-label">Subject</label>
-        <input class="form-input" type="text" placeholder="What's this about?" />
+        <input class="form-input" id="cf-subject" type="text" placeholder="What's this about?" />
       </div>
       <div class="form-field">
         <label class="form-label">Message</label>
-        <textarea class="form-textarea" placeholder="Tell me what you're building..."></textarea>
+        <textarea class="form-textarea" id="cf-message" placeholder="Tell me what you're building..."></textarea>
       </div>
-      <button class="btn-primary" style="align-self:flex-start; border:none; cursor:pointer;">
+      <div id="cf-status" style="font-size:0.7rem; letter-spacing:0.1em; min-height:1.2rem;"></div>
+      <button class="btn-primary" id="cf-btn" onclick="sendMessage()" style="align-self:flex-start; border:none; cursor:pointer;">
         Send Message ↗
       </button>
     </div>
@@ -823,11 +928,77 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 Abdureman Mudi — All rights reserved</div>
+  <div class="footer-copy">© 2026 Abdi — All rights reserved</div>
   <div class="footer-loc">Addis Ababa, Ethiopia</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+  // ── EmailJS config ──────────────────────────────────────────────
+  // SETUP STEPS (one-time, free):
+  // 1. Go to https://www.emailjs.com and create a free account
+  // 2. Add a service: connect your Gmail (abduremankoo@gmail.com) → copy the Service ID
+  // 3. Create an email template with variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+  //    Set "To Email" in template to: abduremankoo@gmail.com
+  // 4. Copy your Public Key from Account → API Keys
+  // 5. Replace the three placeholders below with your real values
+
+  const EMAILJS_PUBLIC_KEY  = 'Qs4NoTRA9r8Md71eb';   // ← replace
+  const EMAILJS_SERVICE_ID  = 'service_lbpax8o';   // ← replace
+  const EMAILJS_TEMPLATE_ID = 'template_31wwc4t';  // ← replace
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  async function sendMessage() {
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const status  = document.getElementById('cf-status');
+    const btn     = document.getElementById('cf-btn');
+
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+      status.style.color = 'var(--accent2)';
+      status.textContent = '⚠ Please fill in all fields.';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      status.style.color = 'var(--accent2)';
+      status.textContent = '⚠ Please enter a valid email address.';
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.style.opacity = '0.6';
+    btn.disabled = true;
+    status.textContent = '';
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name:  name,
+        from_email: email,
+        subject:    subject,
+        message:    message,
+        to_email:   'abduremankoo@gmail.com'
+      });
+
+      status.style.color = 'var(--accent)';
+      status.textContent = '✓ Message sent. I\'ll be in touch.';
+      btn.textContent = 'Sent ✓';
+      // Clear fields
+      ['cf-name','cf-email','cf-subject','cf-message'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+    } catch (err) {
+      status.style.color = 'var(--accent2)';
+      status.textContent = '✗ Send failed. Email me directly at abduremankoo@gmail.com';
+      btn.textContent = 'Send Message ↗';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+    }
+  }
+</script>
   // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
